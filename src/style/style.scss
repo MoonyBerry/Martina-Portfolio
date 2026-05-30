@@ -1,2 +1,8 @@
 // STYLE IMPORT SHEET
+@use "general/index";
 @use "reset";
+@use "base";
+
+//COMPONENTS
+@use "components/header";
+@use "components/hero";

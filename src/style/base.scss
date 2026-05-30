@@ -1,0 +1,84 @@
+@use "general" as *;
+
+body {
+  background-color: $pink-100;
+  color: $purple-600;
+  font-family: $primary-font-family;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  &:has(.header__nav.is-open) {
+    overflow: hidden;
+  }
+}
+
+// GENERAL CLASSES | TAGS
+h1,
+.h1 {
+  font-size: $font-size-title;
+  font-weight: $font-weight-extrabold;
+  line-height: 1.1;
+}
+
+h2,
+.h2 {
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+  line-height: 1.1;
+}
+
+h3,
+.h3 {
+  font-size: $font-size-l;
+  font-weight: $font-weight-medium;
+  line-height: 1.1;
+}
+
+h4,
+.h4 {
+  font-size: $font-size-m;
+  font-weight: $font-weight-medium;
+  line-height: 1.1;
+}
+
+label,
+.label {
+  font-size: $font-size-m;
+  font-weight: $font-weight-medium;
+  line-height: 1.1;
+}
+
+button,
+.button {
+  font-size: $font-size-m;
+  font-weight: $font-weight-medium;
+  line-height: 1.1;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+input,
+.input {
+  font-size: $font-size-m;
+  font-weight: $font-weight-normal;
+  line-height: 1.1;
+  font-family: inherit;
+}
+
+//CONTAINER
+.container {
+  padding-inline: 4.44%;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1320px;
+
+  @include mq("mobile") {
+    padding-inline: $spacing-l;
+  }
+}
+
+// RESIZE
+.resize-animation-stopper * {
+  animation: none !important;
+  transition: none !important;
+}
