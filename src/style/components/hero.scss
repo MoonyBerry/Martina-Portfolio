@@ -1,0 +1,98 @@
+@use "../general" as *;
+
+.hero {
+  min-height: 100dvh;
+  padding-block: 80px;
+  background: linear-gradient(to bottom right, $pink-100, $blue-100);
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  &__wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  &__content {
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: $gap-m;
+  }
+
+  &__title {
+    margin-bottom: $spacing-s;
+    background: linear-gradient(to right, $purple-500, $pink-500);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0px 4px 4px rgba($black, 0.15));
+  }
+
+  &__description {
+    margin-bottom: $spacing-m;
+    max-width: 600px;
+  }
+
+  &__cta {
+    display: inline-block;
+    padding: $spacing-m $spacing-xxl;
+    background: linear-gradient(to right, $purple-400, $pink-400);
+    color: $white;
+    text-decoration: none;
+    font-weight: $font-weight-semibold;
+    border-radius: $border-radius-pill;
+    box-shadow: 0 10px 20px rgba($purple-500, 0.3);
+    transition:
+      transform 0.15s ease,
+      box-shadow 0.15s ease;
+
+    &:hover {
+      transform: rotate(5deg) scale(1.2);
+      box-shadow: 0 15px 25px rgba($purple-500, 0.4);
+      background: linear-gradient(to right, $purple-500, $pink-500);
+    }
+  }
+
+  &__decorations {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.5;
+  }
+
+  &__shape {
+    position: absolute;
+    width: 40px;
+    height: auto;
+
+    &--1 {
+      top: 80px;
+      left: 40px;
+    }
+    &--2 {
+      top: 160px;
+      right: 80px;
+    }
+    &--3 {
+      bottom: 160px;
+      left: 80px;
+    }
+    &--4 {
+      bottom: 80px;
+      right: 160px;
+    }
+    &--5 {
+      top: 240px;
+      left: 360px;
+
+      @include mq("mobile") {
+        left: 125px;
+      }
+    }
+  }
+}

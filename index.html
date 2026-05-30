@@ -4,11 +4,100 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Martina Tarantino | Front-End Developer</title>
+    <link rel="stylesheet" href="./src/style/style.scss" />
   </head>
   <body>
-    <h1>Ciao, sono Martina!</h1>
+    <!-- HEADER -->
+    <header class="header">
+      <div class="container">
+        <div class="header__wrapper">
+          <div class="header__logo">
+            <img
+              src="/src/assets/icons/sparkles.svg"
+              alt="Logo Icon"
+              class="header__icon"
+            />
+            <span class="header__owner">Martina</span>
+          </div>
+          <button class="header__toggle" aria-label="Apri menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          <nav class="header__nav">
+            <ul class="header__list">
+              <li class="header__item">
+                <a href="#home" class="header__link">Home</a>
+              </li>
+              <li class="header__item">
+                <a href="#projects" class="header__link">Progetti</a>
+              </li>
+              <li class="header__item">
+                <a href="#skills" class="header__link">Skills</a>
+              </li>
+              <li class="header__item">
+                <a href="#about" class="header__link">About</a>
+              </li>
+              <li class="header__item">
+                <a href="#contact" class="header__link">Contatti</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
 
-    <!-- File JavaScript -->
+    <!-- HERO -->
+    <main>
+      <section class="hero" id="home">
+        <div class="container">
+          <div class="hero__wrapper">
+            <!-- CONTAINER BACKGROUND SVG -->
+            <div class="hero__decorations" aria-hidden="true">
+              <img
+                src="/src/assets/icons/star.svg"
+                alt=""
+                class="hero__shape hero__shape--1"
+              />
+              <img
+                src="/src/assets/icons/heart.svg"
+                alt=""
+                class="hero__shape hero__shape--2"
+              />
+              <img
+                src="/src/assets/icons/sparkles.svg"
+                alt=""
+                class="hero__shape hero__shape--3"
+              />
+              <img
+                src="/src/assets/icons/star.svg"
+                alt=""
+                class="hero__shape hero__shape--4"
+              />
+              <img
+                src="/src/assets/icons/heart.svg"
+                alt=""
+                class="hero__shape hero__shape--5"
+              />
+            </div>
+
+            <!-- HERO MAIN CONTENT -->
+            <div class="hero__content">
+              <h1 class="hero__title">Ciao, sono Martina</h1>
+              <h2 class="hero__subtitle">Front-End Developer ✨</h2>
+              <p class="hero__description">
+                Attualmente impegnata a creare il mio prossimo progetto 🎨
+              </p>
+              <div class="hero__cta--wrapper">
+                <a href="#projects" class="hero__cta">Esplora i miei lavori</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FILE JS -->
     <script type="module" src="./src/main.js"></script>
   </body>
 </html>
