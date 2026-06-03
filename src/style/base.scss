@@ -15,7 +15,7 @@ body {
 // GENERAL CLASSES | TAGS
 h1,
 .h1 {
-  font-size: $font-size-title;
+  font-size: $font-size-xxl;
   font-weight: $font-weight-extrabold;
   line-height: 1.1;
 }
@@ -23,29 +23,49 @@ h1,
 h2,
 .h2 {
   font-size: $font-size-xl;
-  font-weight: $font-weight-bold;
+  font-weight: $font-weight-extrabold;
   line-height: 1.1;
 }
 
 h3,
 .h3 {
   font-size: $font-size-l;
-  font-weight: $font-weight-medium;
+  font-weight: $font-weight-extrabold;
   line-height: 1.1;
 }
 
 h4,
 .h4 {
   font-size: $font-size-m;
-  font-weight: $font-weight-medium;
+  font-weight: $font-weight-extrabold;
   line-height: 1.1;
 }
 
 label,
 .label {
   font-size: $font-size-m;
-  font-weight: $font-weight-medium;
+  font-weight: $font-weight-bold;
   line-height: 1.1;
+}
+
+p {
+  font-size: $font-size-m;
+}
+
+.p-mini {
+  font-size: $font-size-s;
+  line-height: 20px;
+}
+
+.p-nano {
+  font-size: $font-size-xs;
+  font-weight: $font-weight-bold;
+  line-height: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: currentColor;
 }
 
 button,
@@ -55,6 +75,11 @@ button,
   line-height: 1.1;
   font-family: inherit;
   cursor: pointer;
+  appearance: none;
+}
+
+ul {
+  list-style: none;
 }
 
 input,

@@ -8,6 +8,7 @@
   display: flex;
   align-items: center;
 
+  // --- WRAPPER---
   &__wrapper {
     display: flex;
     justify-content: center;
@@ -15,6 +16,7 @@
     text-align: center;
   }
 
+  // --- MAIN CONTENT ---
   &__content {
     z-index: 2;
     display: flex;
@@ -38,7 +40,8 @@
   }
 
   &__cta {
-    display: inline-block;
+    display: flex;
+    gap: $gap-s;
     padding: $spacing-m $spacing-xxl;
     background: linear-gradient(to right, $purple-400, $pink-400);
     color: $white;
@@ -57,6 +60,7 @@
     }
   }
 
+  // --- BACKGROUND ICONS ---
   &__decorations {
     position: absolute;
     inset: 0;

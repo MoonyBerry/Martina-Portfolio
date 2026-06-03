@@ -1,0 +1,135 @@
+@use "../general" as *;
+
+.projects {
+  padding-block: 80px;
+  background: linear-gradient(to bottom right, $pink-50, $blue-50);
+  overflow: hidden;
+
+  // --- WRAPPER---
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: $gap-xxxl;
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    gap: $gap-m;
+    text-align: center;
+  }
+
+  &__title {
+    padding-bottom: $spacing-s;
+    background: linear-gradient(to left, $purple-500, $pink-500);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0px 4px 4px rgba($black, 0.15));
+  }
+
+  &__subtitle {
+    font-weight: $font-weight-medium;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(315px, 1fr));
+    gap: $gap-xl;
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    border: 4px solid $purple-300;
+    border-radius: $border-radius-card;
+    overflow: hidden;
+    background-color: $white;
+    box-shadow: 0px 20px 25px -5px rgba($black, 0.15);
+    position: relative;
+    transition: border-color 0.2s ease-in-out;
+
+    &:hover {
+      border-color: $pink-500;
+
+      .project-card {
+        &__image {
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+}
+
+.project-card {
+  &__image {
+    aspect-ratio: 350/225;
+    width: 100%;
+    transition: transform 0.4s ease-in-out;
+
+    &-wrapper {
+      position: relative;
+      overflow: hidden;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          180deg,
+          rgba($white, 0) 0%,
+          rgba($purple-200, 0.4) 100%
+        );
+      }
+    }
+  }
+
+  &__content {
+    padding: $spacing-l;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: space-between;
+    gap: $gap-m;
+  }
+
+  &__title {
+    margin-bottom: $spacing-s;
+  }
+
+  &__tags {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: $gap-s;
+    margin-bottom: $spacing-m;
+  }
+
+  &__tag {
+    background: linear-gradient(to right, $purple-200, $pink-200);
+    padding: $spacing-xs $spacing-m;
+    border-radius: $border-radius-pill;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    gap: $gap-xs;
+    font-weight: $font-weight-bold;
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+    }
+
+    &--demo {
+      color: $pink-600;
+    }
+  }
+}
