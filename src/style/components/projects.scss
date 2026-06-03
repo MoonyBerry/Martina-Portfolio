@@ -5,7 +5,7 @@
   background: linear-gradient(to bottom right, $pink-50, $blue-50);
   overflow: hidden;
 
-  // --- WRAPPER---
+  // --- WRAPPER ---
   &__wrapper {
     display: flex;
     flex-direction: column;
@@ -14,6 +14,7 @@
     gap: $gap-xxxl;
   }
 
+  // --- HEADER ---
   &__header {
     display: flex;
     flex-direction: column;
@@ -23,7 +24,7 @@
 
   &__title {
     padding-bottom: $spacing-s;
-    background: linear-gradient(to left, $purple-500, $pink-500);
+    background: linear-gradient(to left, $blue-500, $pink-500);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     filter: drop-shadow(0px 4px 4px rgba($black, 0.15));
@@ -33,6 +34,7 @@
     font-weight: $font-weight-medium;
   }
 
+  // --- GRID ---
   &__grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(315px, 1fr));
@@ -50,18 +52,21 @@
     position: relative;
     transition: border-color 0.2s ease-in-out;
 
-    &:hover {
-      border-color: $pink-500;
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        border-color: $pink-400;
 
-      .project-card {
-        &__image {
-          transform: scale(1.1);
+        .project-card {
+          &__image {
+            transform: scale(1.1);
+          }
         }
       }
     }
   }
 }
 
+// --- CARDS ---
 .project-card {
   &__image {
     aspect-ratio: 350/225;

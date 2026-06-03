@@ -16,8 +16,9 @@ export function initScrollSpy() {
 
   const observerOptions = {
     root: null,
-    rootMargin: "0px",
-    threshold: 0.5,
+
+    rootMargin: "-40% 0px -40% 0px",
+    threshold: 0,
   };
 
   const observer = new IntersectionObserver((entries) => {
@@ -59,7 +60,10 @@ export function initMobileMenu() {
   });
 
   navLinks.forEach((link) => {
-    link.addEventListener("click", closeMenu);
+    link.addEventListener("click", () => {
+      closeMenu();
+      link.blur();
+    });
   });
 
   document.addEventListener("keydown", (event) => {

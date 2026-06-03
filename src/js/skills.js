@@ -3,25 +3,21 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export function initProjectsAnimations() {
-  const cards = document.querySelectorAll(".projects__card");
+export function initSkillsAnimations() {
+  const cards = document.querySelectorAll(".skill-card");
 
   let mm = gsap.matchMedia();
 
   mm.add("(min-width: 768px)", () => {
     cards.forEach((card, index) => {
-      const isEven = index % 2 === 0;
-      const tiltX = isEven ? 50 : -50; // Spostamento di 50xp
-      const tiltRotation = isEven ? 10 : -10; // Inclinazione di 10 gradi
-      const tiltRotationHover = isEven ? 5 : -5; // Inclinazione di 10 gradi
-
       gsap.from(card, {
-        x: tiltX,
-        rotation: tiltRotation,
+        scale: 0, // Partono piccoli
+        rotation: -360, // Rotazione di partenza
         duration: 1,
+        ease: "power2.out",
         scrollTrigger: {
           trigger: card,
-          start: "top 70%",
+          start: "top 90%",
           toggleActions: "play none none reverse",
         },
       });
@@ -33,9 +29,8 @@ export function initProjectsAnimations() {
         if (hoverTween) hoverTween.kill();
 
         hoverTween = gsap.to(card, {
-          rotation: tiltRotationHover,
           delay: 0.5,
-          y: -20,
+          scale: 1.1,
           duration: 0.4,
           ease: "power2.out",
           overwrite: false,
@@ -47,8 +42,7 @@ export function initProjectsAnimations() {
         if (hoverTween) hoverTween.kill();
 
         hoverTween = gsap.to(card, {
-          rotation: 0,
-          y: 0,
+          scale: 1,
           duration: 0.4,
           ease: "power1.inOut",
           overwrite: false,
