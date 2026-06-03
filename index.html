@@ -47,8 +47,8 @@
       </div>
     </header>
 
-    <!-- HERO -->
     <main>
+      <!-- HERO -->
       <section class="hero" id="home">
         <div class="container">
           <div class="hero__wrapper">
@@ -89,8 +89,180 @@
                 Attualmente impegnata a creare il mio prossimo progetto 🎨
               </p>
               <div class="hero__cta--wrapper">
-                <a href="#projects" class="hero__cta">Esplora i miei lavori</a>
+                <a href="#projects" class="hero__cta">
+                  Esplora i miei lavori
+                  <img
+                    src="./src/assets/icons/arrow-right.svg"
+                    alt=""
+                    aria-hidden="true"
+                  />
+                </a>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section class="projects" id="projects">
+        <div class="container">
+          <div class="projects__wrapper">
+            <div class="projects__header">
+              <h2 class="projects__title">Progetti in primo piano ✨</h2>
+              <p class="projects__subtitle">
+                Una selezione dei miei lavori più recenti
+              </p>
+            </div>
+
+            <div class="projects__grid">
+              <article class="projects__card">
+                <div class="project-card__image-wrapper">
+                  <img
+                    src="./src/assets/images/coolors-preview.png"
+                    alt="Anteprima del progetto Coolors Clone"
+                    class="project-card__image"
+                  />
+                </div>
+
+                <div class="project-card__content">
+                  <div class="project-card__top">
+                    <h3 class="project-card__title h4">Coolors Clone</h3>
+                    <p class="project-card__description p-mini">
+                      Web app ispirata a Coolors, il generatore di palette
+                      online. Oltre all'implementazione delle feature principali
+                      (blocco dei colori e copia rapida degli HEX), questo
+                      progetto sviluppato in team mi ha permesso di consolidare
+                      le basi di JavaScript, con un focus specifico sulla
+                      manipolazione del DOM e la gestione degli eventi.
+                    </p>
+                  </div>
+                  <div class="project-card__bottom">
+                    <ul
+                      class="project-card__tags"
+                      aria-label="Tecnologie utilizzate"
+                    >
+                      <li class="project-card__tag p-nano">HTML5</li>
+                      <li class="project-card__tag p-nano">CSS</li>
+                      <li class="project-card__tag p-nano">JS</li>
+                    </ul>
+
+                    <a
+                      href="https://github.com/MoonyBerry/Coolors-We1"
+                      class="project-card__link project-card__link--git"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Vai alla repository Github di Coolors Clone"
+                    >
+                      <img
+                        src="./src/assets/icons/github.svg"
+                        alt=""
+                        aria-hidden="true"
+                      />
+                      GitHub Repo
+                    </a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="projects__card">
+                <div class="project-card__image-wrapper">
+                  <img
+                    src="./src/assets/images/ismett-preview.png"
+                    alt="Sito web del centro ospedaliero ISMETT"
+                    class="project-card__image"
+                  />
+                </div>
+
+                <div class="project-card__content">
+                  <div class="project-card__top">
+                    <h3 class="project-card__title h4">ISMETT</h3>
+                    <p class="project-card__description p-mini">
+                      Sviluppo front-end per il sito istituzionale del centro
+                      ospedaliero ISMETT. Durante il mio percorso in azienda, mi
+                      sono occupata della realizzazione delle pagine e
+                      dell'implementazione dei layout, traducendo il design in
+                      un'interfaccia chiara, accessibile e facilmente navigabile
+                      per gli utenti della struttura.
+                    </p>
+                  </div>
+                  <div class="project-card__bottom">
+                    <ul
+                      class="project-card__tags"
+                      aria-label="Tecnologie utilizzate"
+                    >
+                      <li class="project-card__tag p-nano">WordPress</li>
+                      <li class="project-card__tag p-nano">PHP</li>
+                      <li class="project-card__tag p-nano">SCSS</li>
+                      <li class="project-card__tag p-nano">JS</li>
+                    </ul>
+
+                    <a
+                      href="https://www.ismett.edu/"
+                      class="project-card__link project-card__link--demo"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Visita il sito web di ISMETT"
+                    >
+                      Sito Web
+                      <img
+                        src="./src/assets/icons/live-demo.svg"
+                        alt=""
+                        aria-hidden="true"
+                      />
+                    </a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="projects__card">
+                <div class="project-card__image-wrapper">
+                  <img
+                    src="./src/assets/images/weda-preview.png"
+                    alt="Sito web del centro ginecologico WEDA"
+                    class="project-card__image"
+                  />
+                </div>
+
+                <div class="project-card__content">
+                  <div class="project-card__top">
+                    <h3 class="project-card__title h4">WEDA</h3>
+                    <p class="project-card__description p-mini">
+                      Sviluppo dell'interfaccia utente per il sito del network
+                      di centri ginecologici Weda. Lavorando in team, ho
+                      contribuito attivamente al front-end realizzando blocchi
+                      flessibili personalizzati, gestendo la visualizzazione
+                      degli archivi e strutturando i form di contatto per
+                      ottimizzare l'esperienza utente.
+                    </p>
+                  </div>
+                  <div class="project-card__bottom">
+                    <ul
+                      class="project-card__tags"
+                      aria-label="Tecnologie utilizzate"
+                    >
+                      <li class="project-card__tag p-nano">WordPress</li>
+                      <li class="project-card__tag p-nano">PHP</li>
+                      <li class="project-card__tag p-nano">SCSS</li>
+                      <li class="project-card__tag p-nano">JS</li>
+                    </ul>
+
+                    <a
+                      href="https://www.weda.it/"
+                      class="project-card__link project-card__link--demo"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Visita il sito web di WEDA"
+                    >
+                      Sito Web
+                      <img
+                        src="./src/assets/icons/live-demo.svg"
+                        alt=""
+                        aria-hidden="true"
+                      />
+                    </a>
+                  </div>
+                </div>
+              </article>
             </div>
           </div>
         </div>

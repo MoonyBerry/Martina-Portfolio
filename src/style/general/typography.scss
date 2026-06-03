@@ -9,12 +9,12 @@ $primary-font-family: $font-sans;
 $secondary-font-family: $font-mono;
 
 // FONT SIZE
-$font-size-s: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
-$font-size-m: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
-$font-size-l: clamp(1.25rem, 1.1rem + 0.75vw, 1.5rem);
-$font-size-xl: clamp(1.5rem, 1.3rem + 1vw, 2rem);
-$font-size-xxl: clamp(2rem, 1.6rem + 2vw, 3rem);
-$font-size-title: clamp(3rem, 1.5rem + 5vw, 6rem);
+$font-size-xs: 0.75rem;
+$font-size-s: 0.875rem;
+$font-size-m: clamp(1rem, 0.95rem + 0.26vw, 1.125rem);
+$font-size-l: clamp(1.5rem, 1.33rem + 0.83vw, 2rem);
+$font-size-xl: clamp(3rem, 2.75rem + 1.25vw, 3.75rem);
+$font-size-xxl: clamp(4.5rem, 4rem + 2.5vw, 6rem);
 
 // FONT WEIGHT
 $font-weight-normal: 400;

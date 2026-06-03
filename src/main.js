@@ -1,12 +1,14 @@
 import gsap from "gsap";
 import { initHeadroom, initScrollSpy, initMobileMenu } from "./js/header.js";
 import { initHeroAnimations } from "./js/hero.js";
+import { initProjectsAnimations } from "./js/projects.js";
 
 // INIT
 initHeadroom();
 initScrollSpy();
 initMobileMenu();
 initHeroAnimations();
+initProjectsAnimations();
 
 // --- RESIZE ANIMATION ---
 let resizeTimer;
