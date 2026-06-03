@@ -1,0 +1,85 @@
+@use "../general" as *;
+
+.skills {
+  padding-block: 80px;
+  background: linear-gradient(to bottom right, $blue-50, $pink-50);
+
+  // --- WRAPPER ---
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: $gap-xxxl;
+  }
+
+  // --- HEADER ---
+  &__header {
+    display: flex;
+    flex-direction: column;
+    gap: $gap-m;
+    text-align: center;
+  }
+
+  &__title {
+    padding-bottom: $spacing-s;
+    background: linear-gradient(to left, $pink-500, $blue-500);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0px 4px 4px rgba($black, 0.15));
+  }
+
+  &__subtitle {
+    font-weight: $font-weight-medium;
+  }
+
+  // --- GRID ---
+  &__grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(315px, 1fr));
+    gap: $gap-xl;
+  }
+}
+
+// --- CARDS ---
+.skill-card {
+  background-color: $white;
+  padding: $spacing-l;
+  border: 4px solid $blue-300;
+  border-radius: $border-radius-card;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: $gap-s;
+
+  box-shadow: 0px 20px 25px -5px rgba($black, 0.15);
+  transition: border-color 0.2s ease-in-out;
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      border-color: $pink-400;
+
+      .skill-card__icon-wrapper {
+        transform: rotate(360deg);
+      }
+    }
+  }
+
+  &__icon {
+    width: 32px;
+    height: 32px;
+
+    &-wrapper {
+      margin-bottom: $spacing-s;
+      background: linear-gradient(to left, $pink-400, $purple-400);
+      padding: $spacing-m;
+      border-radius: 16px;
+
+      box-shadow: 0px 10px 15px -3px rgba($black, 0.15);
+      transition: transform 0.6s ease-in-out;
+    }
+  }
+}

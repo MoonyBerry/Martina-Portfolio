@@ -1,5 +1,9 @@
 @use "general" as *;
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: $pink-100;
   color: $purple-600;
@@ -98,7 +102,7 @@ input,
   max-width: 1320px;
 
   @include mq("mobile") {
-    padding-inline: $spacing-l;
+    padding-inline: $spacing-m;
   }
 }
 

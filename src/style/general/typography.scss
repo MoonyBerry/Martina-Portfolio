@@ -11,10 +11,10 @@ $secondary-font-family: $font-mono;
 // FONT SIZE
 $font-size-xs: 0.75rem;
 $font-size-s: 0.875rem;
-$font-size-m: clamp(1rem, 0.95rem + 0.26vw, 1.125rem);
-$font-size-l: clamp(1.5rem, 1.33rem + 0.83vw, 2rem);
-$font-size-xl: clamp(3rem, 2.75rem + 1.25vw, 3.75rem);
-$font-size-xxl: clamp(4.5rem, 4rem + 2.5vw, 6rem);
+$font-size-m: clamp(1rem, calc(0.956rem + 0.188vw), 1.125rem);
+$font-size-l: clamp(1.5rem, calc(1.368rem + 0.563vw), 1.875rem);
+$font-size-xl: clamp(3rem, calc(2.736rem + 1.127vw), 3.75rem);
+$font-size-xxl: clamp(3.75rem, calc(2.958rem + 3.38vw), 6rem);
 
 // FONT WEIGHT
 $font-weight-normal: 400;
