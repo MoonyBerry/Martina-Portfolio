@@ -1,0 +1,81 @@
+@use "../general" as *;
+
+.contact {
+  padding-block: $spacing-xxl;
+  border-top: 4px solid $purple-300;
+  background: linear-gradient(to top left, $pink-100, $purple-100);
+
+  // --- WRAPPER ---
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: $gap-m;
+  }
+
+  // --- HEADER ---
+  &__header {
+    display: flex;
+    flex-direction: column;
+    gap: $gap-m;
+    text-align: center;
+  }
+
+  &__title {
+    padding-bottom: $spacing-s;
+    background: linear-gradient(to left, $purple-500, $pink-500);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0px 4px 4px rgba($black, 0.15));
+  }
+
+  &__subtitle {
+    font-weight: $font-weight-medium;
+    margin-bottom: $spacing-s;
+  }
+
+  &__socials {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: $gap-l;
+    margin-bottom: $spacing-m;
+    width: 100%;
+
+    &-btn {
+      display: block;
+      box-shadow: 0px 10px 15px -3px rgba($black, 0.15);
+      padding: $spacing-m;
+      border-radius: 16px;
+      transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+      @media (hover: hover) and (pointer: fine) {
+        &:hover {
+          transform: translateY(-10px) scale(1.2) rotate(360deg);
+        }
+      }
+
+      &--pink {
+        background: linear-gradient(to top left, $pink-400, $purple-400);
+      }
+
+      &--purple {
+        background: linear-gradient(to top left, $blue-400, $pink-400);
+      }
+
+      &--blue {
+        background: linear-gradient(to top left, $purple-400, $blue-400);
+      }
+    }
+
+    &-icon {
+      width: 32px;
+      height: 32px;
+    }
+  }
+
+  &__copyright {
+    font-weight: $font-weight-medium;
+  }
+}
