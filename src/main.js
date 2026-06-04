@@ -3,6 +3,7 @@ import { initHeadroom, initScrollSpy, initMobileMenu } from "./js/header.js";
 import { initHeroAnimations } from "./js/hero.js";
 import { initProjectsAnimations } from "./js/projects.js";
 import { initSkillsAnimations } from "./js/skills.js";
+import { initAboutAnimations } from "./js/about.js";
 
 // INIT
 initHeadroom();
@@ -11,6 +12,7 @@ initMobileMenu();
 initHeroAnimations();
 initProjectsAnimations();
 initSkillsAnimations();
+initAboutAnimations();
 
 // --- RESIZE ANIMATION ---
 let resizeTimer;
