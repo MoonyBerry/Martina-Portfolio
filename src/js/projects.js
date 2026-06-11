@@ -6,30 +6,34 @@ gsap.registerPlugin(ScrollTrigger);
 export function initProjectsAnimations() {
   const cards = document.querySelectorAll(".projects__card");
 
+  cards.forEach((card, index) => {
+    const isEven = index % 2 === 0;
+    const tiltX = isEven ? 50 : -50; // Spostamento di 50xp
+    const tiltRotation = isEven ? 10 : -10; // Inclinazione di 10 gradi
+
+    gsap.from(card, {
+      x: tiltX,
+      rotation: tiltRotation,
+      duration: 1,
+      scrollTrigger: {
+        trigger: card,
+        start: "top 70%",
+        toggleActions: "play none none reverse",
+      },
+    });
+  });
+
   let mm = gsap.matchMedia();
 
   mm.add("(min-width: 768px)", () => {
+    const activeListeners = [];
+
     cards.forEach((card, index) => {
       const isEven = index % 2 === 0;
-      const tiltX = isEven ? 50 : -50; // Spostamento di 50xp
-      const tiltRotation = isEven ? 10 : -10; // Inclinazione di 10 gradi
       const tiltRotationHover = isEven ? 5 : -5; // Inclinazione di 10 gradi
-
-      gsap.from(card, {
-        x: tiltX,
-        rotation: tiltRotation,
-        duration: 1,
-        scrollTrigger: {
-          trigger: card,
-          start: "top 70%",
-          toggleActions: "play none none reverse",
-        },
-      });
-
       let hoverTween;
 
-      // Animazione Hover (Mouse Enter)
-      card.addEventListener("mouseenter", () => {
+      const onMouseEnter = () => {
         if (hoverTween) hoverTween.kill();
 
         hoverTween = gsap.to(card, {
@@ -40,10 +44,9 @@ export function initProjectsAnimations() {
           ease: "power2.out",
           overwrite: false,
         });
-      });
+      };
 
-      // Animazione Hover (Mouse Leave)
-      card.addEventListener("mouseleave", () => {
+      const onMouseLeave = () => {
         if (hoverTween) hoverTween.kill();
 
         hoverTween = gsap.to(card, {
@@ -53,7 +56,22 @@ export function initProjectsAnimations() {
           ease: "power1.inOut",
           overwrite: false,
         });
-      });
+      };
+
+      // Animazione Hover (Mouse Enter)
+      card.addEventListener("mouseenter", onMouseEnter);
+
+      // Animazione Hover (Mouse Leave)
+      card.addEventListener("mouseleave", onMouseLeave);
+
+      activeListeners.push({ card, onMouseEnter, onMouseLeave });
     });
+
+    return () => {
+      activeListeners.forEach(({ card, onMouseEnter, onMouseLeave }) => {
+        card.removeEventListener("mouseenter", onMouseEnter);
+        card.removeEventListener("mouseleave", onMouseLeave);
+      });
+    };
   });
 }
