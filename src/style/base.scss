@@ -111,3 +111,25 @@ input,
   animation: none !important;
   transition: none !important;
 }
+
+// TAB FOCUS
+*:focus:not(:focus-visible) {
+  outline: none;
+}
+
+*:focus-visible {
+  outline: 3px solid $purple-400;
+  outline-offset: 6px;
+  border-radius: 8px;
+}
+
+// --- TESTO EVIDENZIATO ---
+::selection {
+  background-color: $pink-400;
+  color: $white;
+}
+
+::-moz-selection {
+  background-color: $pink-400;
+  color: $white;
+}

@@ -1,7 +1,7 @@
 @use "../general" as *;
 
 .hero {
-  min-height: 100dvh;
+  min-height: 100svh;
   padding-block: 80px;
   background: linear-gradient(to bottom right, $pink-100, $blue-100);
   position: relative;
@@ -53,10 +53,12 @@
       transform 0.15s ease,
       box-shadow 0.15s ease;
 
-    &:hover {
-      transform: rotate(5deg) scale(1.2);
-      box-shadow: 0 15px 25px rgba($purple-500, 0.4);
-      background: linear-gradient(to right, $purple-500, $pink-500);
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        transform: rotate(5deg) scale(1.2);
+        box-shadow: 0 15px 25px rgba($purple-500, 0.4);
+        background: linear-gradient(to right, $purple-500, $pink-500);
+      }
     }
   }
 

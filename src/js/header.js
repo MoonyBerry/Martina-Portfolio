@@ -10,35 +10,66 @@ export function initHeadroom() {
 }
 
 // --- MENU ACTIVE SPY ---
+
 export function initScrollSpy() {
-  const sections = document.querySelectorAll("section[id], header[id]");
   const navLinks = document.querySelectorAll(".header__link");
+  const targets = document.querySelectorAll("section[id], footer[id]");
+  const visibleSections = new Set();
 
-  const observerOptions = {
-    root: null,
-
-    rootMargin: "-40% 0px -40% 0px",
-    threshold: 0,
+  const updateActiveLink = (id) => {
+    if (!id) return;
+    navLinks.forEach((link) => link.classList.remove("active"));
+    const activeLink = document.querySelector(`.header__link[href="#${id}"]`);
+    if (activeLink) activeLink.classList.add("active");
   };
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        const currentId = entry.target.getAttribute("id");
+  const checkAndApplyActiveLink = () => {
+    // Controlliamo se ci troviamo in fondo alla pagina
+    const isAtBottom =
+      Math.ceil(window.innerHeight + window.scrollY) >=
+      document.documentElement.scrollHeight - 50;
 
-        navLinks.forEach((link) => link.classList.remove("active"));
+    if (isAtBottom) {
+      // Se siamo in fondo, vince il footer
+      updateActiveLink("contact");
+    } else {
+      // Altrimenti, tra le sezioni attualmente visibili, diamo priorità a quella più in basso
+      const activeId = Array.from(targets)
+        .reverse()
+        .find((target) => visibleSections.has(target.id))?.id;
+      updateActiveLink(activeId);
+    }
+  };
 
-        const activeLink = document.querySelector(
-          `.header__link[href="#${currentId}"]`,
-        );
-        if (activeLink) {
-          activeLink.classList.add("active");
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        const id = entry.target.getAttribute("id");
+
+        // Se entra nello schermo la aggiungiamo alla lista, se esce la togliamo
+        if (entry.isIntersecting) {
+          visibleSections.add(id);
+        } else {
+          visibleSections.delete(id);
         }
-      }
-    });
-  }, observerOptions);
+      });
 
-  sections.forEach((section) => observer.observe(section));
+      // Ad ogni movimento, calcoliamo chi deve accendersi
+      checkAndApplyActiveLink();
+    },
+    {
+      root: null,
+      rootMargin: "-20% 0px -40% 0px",
+      threshold: 0,
+    },
+  );
+
+  // Mettiamo in ascolto tutte le sezioni e il footer
+  targets.forEach((target) => observer.observe(target));
+
+  window.addEventListener("scroll", () => {
+    checkAndApplyActiveLink();
+  });
 }
 
 // --- MOBILE MENU ---
